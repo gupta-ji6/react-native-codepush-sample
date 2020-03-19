@@ -27,12 +27,12 @@ import {
 
 import codePush from 'react-native-code-push';
 
- onButtonPress() {
-    codePush.sync({
-      updateDialog: true,
-      installMode: codePush.InstallMode.IMMEDIATE
-    });
-  }
+const onButtonPress = () => {
+  codePush.sync({
+    updateDialog: true,
+    installMode: codePush.InstallMode.IMMEDIATE,
+  });
+};
 
 const App: () => React$Node = () => {
   return (
@@ -49,7 +49,7 @@ const App: () => React$Node = () => {
             </View>
           )}
           <View style={styles.body}>
-            <TouchableOpacity onPress={this.onButtonPress}>
+            <TouchableOpacity onPress={() => onButtonPress()}>
               <Text>Check for updates</Text>
             </TouchableOpacity>
             <View style={styles.sectionContainer}>
