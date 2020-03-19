@@ -1,114 +1,114 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-
-import CodePush from "react-native-code-push";
-
-class App extends Component {
-  constructor() {
-    super();
-    this.state = { syncMessage: "" };
-  }
-
-  componentDidMount() {
-    this.sync();
-  }
-
-  codePushStatusDidChange(syncStatus) {
-    console.log(syncStatus);
-    switch (syncStatus) {
-      case CodePush.SyncStatus.CHECKING_FOR_UPDATE:
-        this.setState({ syncMessage: "Checking for update." });
-        break;
-
-      case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
-        this.setState({ syncMessage: "Downloading package." });
-        break;
-
-      case CodePush.SyncStatus.AWAITING_USER_ACTION:
-        this.setState({ syncMessage: "Awaiting user action." });
-        break;
-
-      case CodePush.SyncStatus.INSTALLING_UPDATE:
-        this.setState({ syncMessage: "Installing update." });
-        break;
-
-      case CodePush.SyncStatus.UP_TO_DATE:
-        this.setState({ syncMessage: "App is updated." });
-        break;
-
-      case CodePush.SyncStatus.UPDATE_IGNORED:
-        this.setState({
-          syncMessage: "Update cancelled by user.",
-          progress: false
-        });
-        break;
-
-      case CodePush.SyncStatus.UPDATE_INSTALLED:
-        this.setState({
-          syncMessage: "Update installed and will be applied on restart.",
-          progress: false
-        });
-        break;
-
-      case CodePush.SyncStatus.UNKNOWN_ERROR:
-        this.setState({
-          syncMessage: "An unknown error occurred.",
-
-          progress: false
-        });
-
-        break;
-    }
-  } /** Update pops a confirmation dialog, and then immediately reboots the app */
-
-  async sync() {
-    CodePush.sync(
-      { installMode: CodePush.InstallMode.IMMEDIATE, updateDialog: true },
-
-      this.codePushStatusDidChange()
-    );
-
-    CodePush.allowRestart();
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>CodePush is added ^_^</Text>
-        <Text>Hello world </Text>
-        <Text style={styles.messages}>{this.state.syncMessage}</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
-    paddingTop: 50
-  },
-
-  messages: {
-    marginTop: 30,
-    textAlign: "center"
-  },
-
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 20
-  }
-});
-
 /**
- * Configured with a MANUAL check frequency for easy testing. For production apps, it is recommended to configure a
- * different check frequency, such as ON_APP_START, for a 'hands-off' approach where CodePush.sync() does not
- * need to be explicitly called. All options of CodePush.sync() are also available in this decorator.
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
  */
 
-let codePushOptions = { checkFrequency: CodePush.CheckFrequency.MANUAL };
-App = CodePush(codePushOptions)(App);
+import React from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+} from 'react-native';
+
+import {
+  Header,
+  LearnMoreLinks,
+  Colors,
+  DebugInstructions,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+
+const App: () => React$Node = () => {
+  return (
+    <>
+      <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}>
+          <Header />
+          {global.HermesInternal == null ? null : (
+            <View style={styles.engine}>
+              <Text style={styles.footer}>Engine: Hermes</Text>
+            </View>
+          )}
+          <View style={styles.body}>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionDescription}>
+                Edit <Text style={styles.highlight}>App.js</Text> to change this
+                screen and then come back to see your edits.
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <Text style={styles.sectionDescription}>
+                <ReloadInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Debug</Text>
+              <Text style={styles.sectionDescription}>
+                <DebugInstructions />
+              </Text>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Learn More</Text>
+              <Text style={styles.sectionDescription}>
+                Read the docs to discover what to do next:
+              </Text>
+            </View>
+            <LearnMoreLinks />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </>
+  );
+};
+
+const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: Colors.lighter,
+  },
+  engine: {
+    position: 'absolute',
+    right: 0,
+  },
+  body: {
+    backgroundColor: Colors.white,
+  },
+  sectionContainer: {
+    marginTop: 32,
+    paddingHorizontal: 24,
+  },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: Colors.black,
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+    color: Colors.dark,
+  },
+  highlight: {
+    fontWeight: '700',
+  },
+  footer: {
+    color: Colors.dark,
+    fontSize: 12,
+    fontWeight: '600',
+    padding: 4,
+    paddingRight: 12,
+    textAlign: 'right',
+  },
+});
 
 export default App;
