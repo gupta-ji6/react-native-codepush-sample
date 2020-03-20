@@ -5,17 +5,17 @@
 ![GitHub followers](https://img.shields.io/github/followers/gupta-ji6?label=Follow&style=social)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/gupta-ji6/react-native-codepush-sample/issues)
 
-A sample project to test [CodePush (now called App Center)](https://appcenter.ms) integration in React Native.
+A sample project to test [CodePush (now called App Center)](https://appcenter.ms) integration in React Native, which worked successfully :tada:.
 
 ## What is App Center (previously CodePush)?
 
-[CodePush](https://appcenter.ms/) is a service by Microsoft to deliver OTA updates on React Native applications which gives mobile application a web-like agility.
+[CodePush](https://appcenter.ms/) is a service by Microsoft to deliver OTA updates on React Native applications which gives mobile applications a web-like agility.
 
 ## Get Started with App Center
 
 ### Prerequisites
 
-1. [App Center](https://appcenter.ms/) account(prefer signing in with GitHub).
+1. [App Center](https://appcenter.ms/) account (prefer signing in with GitHub).
 2. [React Native](https://reactnative.dev/docs/getting-started) setup.
 
 Create a React Native app using [react-native-cli](https://www.npmjs.com/package/react-native-cli) and push the code to a GitHub repo.
@@ -41,7 +41,7 @@ Your app on device/simulator should look like below.
 
 ### Adding app in App Center
 
-1. Login to [App Center](http://appcenter.ms/) and click on 'Add new app' button.
+1. Login to [App Center](http://appcenter.ms/) and click on '**Add new app**' button.
 1. Fill the details according to your requirements. Sample inputs -
 
     | Label        |    Input     |
@@ -54,12 +54,12 @@ Your app on device/simulator should look like below.
 1. Click '**Add new app**' button.
 1. Add App Center SDK in your app as instructed in '**Overview**' section, if needed.
 1. Go to '**Build**' section to connect you repo.
-1. Select 'GitHub' service and select your repo.
+1. Select '**GitHub**' service and select your repo.
 1. Select `master` branch and click on gear icon (settings) at end of item.
 
     - Build Variant - Release
     - Node.js version - 12.x
-    - Sign Builds - on
+    - Sign Builds - On
     - Check '**My Gradle settings are...**' (**only for test purpose**)
     - Distribute Builds - On
 
@@ -74,7 +74,7 @@ npm install -g appcenter-cli    # Install appcenter
 appcenter login                 # Login to appcenter
 ```
 
-Copy authentication code opened in browser and copy in terminal prompt.
+Copy authentication code opened in browser and paste in terminal prompt.
 
 ### Create Deployment
 
@@ -83,7 +83,7 @@ Copy authentication code opened in browser and copy in terminal prompt.
 
 ### Plugin Installation (Android)
 
-Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native) for other platform guide.
+> Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native) for other platform guide.
 
 #### Plugin Installation and Configuration for React Native 0.60 version and above (Android)
 
@@ -117,7 +117,9 @@ Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distributio
     ```
 
 3. Get Staging and Production keys from terminal.
-`appcenter codepush deployment list --app gupta-ji6/CodePushRN -k`
+
+    `appcenter codepush deployment list --app gupta-ji6/CodePushRN -k`
+
 4. Add the **Staging** Deployment key to `strings.xml`:
 
    ```xml
@@ -129,17 +131,18 @@ Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distributio
 
 5. Install & link [`react-native-code-push'](https://github.com/microsoft/react-native-code-push)
 
-```lang-sh
-npm install --save react-native-code-push # Install the code push client sdk
-react-native link react-native-code-push  # Link this npm with the natvie build
-```
+    ```lang-sh
+    npm install --save react-native-code-push # Install the code push client sdk
+    react-native link react-native-code-push  # Link this npm with the natvie build
+    ```
 
 ## Plugin Usage
 
 1. Go to `App.js` and import `react-native-code-push` module:
-`import codePush from "react-native-code-push";`
 
-2. Add a Touchable Opacity with a corresponding handler.
+    `import codePush from "react-native-code-push";`
+
+1. Add a Touchable Opacity with a corresponding handler.
 
     ```jsx
     <TouchableOpacity onPress={this.onButtonPress}>
@@ -156,7 +159,7 @@ react-native link react-native-code-push  # Link this npm with the natvie build
     }
     ```
 
-3. Make the above changes and check in the code in the remote git repo.
+2. Make the above changes and check in the code in the remote git repo.
 This will trigger a build automatically in the app center and we’ll receive a mail with the new download link for the updated app. Once installed, it’ll look something like this.
 
     <p align="center">
