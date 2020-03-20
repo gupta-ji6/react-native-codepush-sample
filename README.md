@@ -35,9 +35,9 @@ git push origin master
 
 Your app on device/simulator should look like below.
 
-    <p align="center">
-     <img src="https://user-images.githubusercontent.com/21218732/77157164-d4886980-6ac6-11ea-8261-ffac168de7c6.jpg" height="400" width="auto">
-    </p>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/21218732/77157164-d4886980-6ac6-11ea-8261-ffac168de7c6.jpg" height="400" width="auto">
+</p>
 
 ### Adding app in App Center
 
