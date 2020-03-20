@@ -35,10 +35,14 @@ git push origin master
 
 Your app on device/simulator should look like below.
 
+    <p align="center">
+     <img src="https://user-images.githubusercontent.com/21218732/77157164-d4886980-6ac6-11ea-8261-ffac168de7c6.jpg" height="400" width="auto">
+    </p>
+
 ### Adding app in App Center
 
 1. Login to [App Center](http://appcenter.ms/) and click on 'Add new app' button.
-1. Fill the details according to your requirements. Sample inputs - 
+1. Fill the details according to your requirements. Sample inputs -
 
     | Label        |    Input     |
     | ------------ | :----------: |
@@ -77,7 +81,6 @@ Copy authentication code opened in browser and copy in terminal prompt.
 1. Select **Distribute** > **Codepush**.
 2. Click **Create standard deployments**.
 
-
 ### Plugin Installation (Android)
 
 Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native) for other platform guide.
@@ -86,15 +89,16 @@ Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distributio
 
 1. In your `android/app/build.gradle` file, add the `codepush.gradle` file as an additional build task definition underneath `react.gradle`:
 
-    ```
+    ```gradle
     ...
     apply from: "../../node_modules/react-native/react.gradle"
     apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
     ...
     ```
+
 2. Update the `MainApplication.java` file to use CodePush via the following changes:
 
-    ```
+    ```java
     ...
     // 1. Import the plugin class.
     import com.microsoft.codepush.react.CodePush;
@@ -112,17 +116,18 @@ Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distributio
     }
     ```
 
-1. Get Staging and Production keys from terminal.
+3. Get Staging and Production keys from terminal.
 `appcenter codepush deployment list --app gupta-ji6/CodePushRN -k`
-1. Add the **Staging** Deployment key to `strings.xml`:
-   
+4. Add the **Staging** Deployment key to `strings.xml`:
+
    ```xml
    <resources>
      <string name="app_name">AppName</string>
      <string moduleConfig="true" name="CodePushDeploymentKey">DeploymentKey</string>
     </resources>
     ```
-1. Install & link [`react-native-code-push'](https://github.com/microsoft/react-native-code-push)
+
+5. Install & link [`react-native-code-push'](https://github.com/microsoft/react-native-code-push)
 
 ```lang-sh
 npm install --save react-native-code-push # Install the code push client sdk
@@ -154,6 +159,10 @@ react-native link react-native-code-push  # Link this npm with the natvie build
 3. Make the above changes and check in the code in the remote git repo.
 This will trigger a build automatically in the app center and we’ll receive a mail with the new download link for the updated app. Once installed, it’ll look something like this.
 
+    <p align="center">
+        <img src="https://user-images.githubusercontent.com/21218732/77157721-ecacb880-6ac7-11ea-869e-0e5bc9c11d2c.jpg" height="400" width="auto">
+    </p>
+
 ## Releasing Update with App Center CLI
 
 Once your app has been configured and distributed to your users, and you have made some JS and/or asset changes, it's time to instantly release them! ([*See More*](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native#releasing-updates))
@@ -168,12 +177,20 @@ Once your app has been configured and distributed to your users, and you have ma
     appcenter codepush release-react -a gupta-ji6/CodePushRN -d Staging #for staging
     appcenter codepush release-react -a gupta-ji6/CodePushRN -d Production #for production
     ```
+
 3. Reopen the latest mobile aap installed.
 4. Click on **Check for updates** button.
 5. Click **Install** on prompt.
-6. Viola! :tada: You'll see your updated changes after the app reopens.
 
+    <p align="center">
+        <img src="https://user-images.githubusercontent.com/21218732/77158395-3944c380-6ac9-11ea-8fe9-01feb7b892ca.jpg" height="400" width="auto">
+    </p>
 
+6. Voila! :tada: You'll see your updated changes after the app reopens.
+
+    <p align="center">
+        <img src="https://user-images.githubusercontent.com/21218732/77157934-56c55d80-6ac8-11ea-8042-4b6bfdfdff41.jpg" height="400" width="auto">
+    </p>
 
 ## References
 
