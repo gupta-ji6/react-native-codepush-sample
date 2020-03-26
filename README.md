@@ -53,9 +53,9 @@ Your app on device/simulator should look like below.
 
 1. Click '**Add new app**' button.
 1. Add App Center SDK in your app as instructed in '**Overview**' section, if needed.
-1. Go to '**Build**' section to connect you repo.
+1. Go to '**Build**' section to connect your repo.
 1. Select '**GitHub**' service and select your repo.
-1. Select `master` branch and click on gear icon (settings) at end of item.
+1. Select `master` branch and click on the gear icon (settings) at the end of the item.
 
     - Build Variant - Release
     - Node.js version - 12.x
@@ -64,7 +64,7 @@ Your app on device/simulator should look like below.
     - Distribute Builds - On
 
 1. Click '**Save & Build**'.
-1. After successfull build, you'll recieve a mail from App Center to install the APK on device.
+1. After successful build, you'll receive a mail from App Center to install the APK on the device.
 1. Install APK on device.
 
 ## Setup App Center CLI
@@ -83,7 +83,7 @@ Copy authentication code opened in browser and paste in terminal prompt.
 
 ### Plugin Installation (Android)
 
-> Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native) for other platform guide.
+> Refer the [documentation](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native) for other platform guides.
 
 #### Plugin Installation and Configuration for React Native 0.60 version and above (Android)
 
@@ -116,7 +116,7 @@ Copy authentication code opened in browser and paste in terminal prompt.
     }
     ```
 
-3. Get Staging and Production keys from terminal.
+3. Get Staging and Production keys from the terminal.
 
     `appcenter codepush deployment list --app gupta-ji6/CodePushRN -k`
 
@@ -142,7 +142,7 @@ Copy authentication code opened in browser and paste in terminal prompt.
 
     `import codePush from "react-native-code-push";`
 
-1. Add a Touchable Opacity with a corresponding handler.
+2. Add a Touchable Opacity with a corresponding handler.
 
     ```jsx
     <TouchableOpacity onPress={this.onButtonPress}>
@@ -159,7 +159,7 @@ Copy authentication code opened in browser and paste in terminal prompt.
     }
     ```
 
-2. Make the above changes and check in the code in the remote git repo.
+3. Make the above changes and check in the code in the remote git repo.
 This will trigger a build automatically in the app center and we’ll receive a mail with the new download link for the updated app. Once installed, it’ll look something like this.
 
     <p align="center">
@@ -181,7 +181,7 @@ Once your app has been configured and distributed to your users, and you have ma
     appcenter codepush release-react -a gupta-ji6/CodePushRN -d Production #for production
     ```
 
-3. Reopen the latest mobile aap installed.
+3. Reopen the latest mobile app installed.
 4. Click on **Check for updates** button.
 5. Click **Install** on prompt.
 
