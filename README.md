@@ -195,14 +195,28 @@ Once your app has been configured and distributed to your users, and you have ma
         <img src="https://user-images.githubusercontent.com/21218732/77157934-56c55d80-6ac8-11ea-8042-4b6bfdfdff41.jpg" height="400" width="auto">
     </p>
 
-## References
+## Further Reading
 
+- [Visual Studio App Center documentation](https://docs.microsoft.com/en-us/appcenter/)
+- [microsoft/react-native-code-push](https://github.com/Microsoft/react-native-code-push#codepush)
+- [microsoft/code-push](https://github.com/Microsoft/code-push)
+- [code-push-cli](https://www.npmjs.com/package/code-push-cli)
 - [React Native updates with VS App Center CodePush](https://codeburst.io/react-native-updates-with-vs-app-center-codepush-3d56ef07f1c4)
+- [Using legacy dependencies with React Native and CodePush](https://www.kennymeyer.net/2019/11/28/using-legacy-dependencies-in-react-native-and-codepush/)
+- [Microsoft CodePush Integration in React Native 0.60+](https://giacomocerquone.com/blog/microsoft-codepush-integration-in-react-native-0.60)
+- [Bitrise + CodePush + React Native = Ideal Mobile CI Setup?](https://pillow.codes/bitrise-codepush-react-native-ideal-mobile-ci-setup-6283b86146c)
+- [ZeeMee Engineering and the Quest for the Holy (Mobile Dev) Grail](https://zeemee.engineering/zeemee-engineering-and-the-quest-for-the-holy-mobile-dev-grail-1310be4953d1#.zfwaxtbco)
+- [LinkedIn Learning Course: App Center: Continuous Integration and Delivery for iOS](https://www.linkedin.com/learning/app-center-continuous-integration-and-delivery-for-ios?u=3322)
+  
+### Other Helpful Resources
+
 - [App Center Codepush with React-Native](https://binbytes.com/blog/app-center-codepush-with-react-native)
 - [React Native Client SDK](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/react-native)
-- [react-native-code-push](https://github.com/Microsoft/react-native-code-push#codepush)
+- [React Native at Picnic](https://blog.picnic.nl/react-native-at-picnic-eff17e8c51d5)
 - [Android Setup](https://github.com/microsoft/react-native-code-push/blob/master/docs/setup-android.md#code-signing-setup)
 - [Android Build](https://docs.microsoft.com/en-us/appcenter/build/android/)
-- [code-push-cli](https://www.npmjs.com/package/code-push-cli)
 - [React Native ❤ CodePush](https://medium.com/spritle-software/react-native-codepush-b86f0ea8432c)
 - [Get started with ‘CodePush’ (React-Native)](https://medium.com/@rajanmaharjan/get-started-with-wonderful-technology-d838aafdc2d3)
+- [React Native and Codepush Experience](https://www.panayiotisgeorgiou.net/react-native-codepush-experience/)
+- [React Native CodePush introduction](https://www.asapdevelopers.com/react-native-codepush-introduction/)
+- [CodePush, is it worth it?](https://www.matthewsessions.com/blog/code-push/)
