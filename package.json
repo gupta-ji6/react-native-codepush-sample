@@ -10,12 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "appcenter": "3.0.0",
-    "appcenter-analytics": "3.0.0",
-    "appcenter-crashes": "3.0.0",
+    "appcenter": "4.4.5",
+    "appcenter-analytics": "4.4.5",
+    "appcenter-crashes": "4.4.5",
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-code-push": "^6.1.1"
+    "react-native-code-push": "^7.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
